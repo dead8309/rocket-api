@@ -1,6 +1,14 @@
 # rocket-api
 
-Experimenting with Rust and Rocket web framework. This is a simple REST Api that interacts with a MongoDB database to perform CRUD operations on a User model. Currently a work in progress.🚧
+Experimenting with Rust and Rocket web framework. This is a simple REST Api that interacts with a MongoDB database to perform CRUD operations on a User model. 
+
+## Endpoints
+
+- GET /users
+- GET /users/:id
+- POST /users
+- PUT /users/:id
+- DELETE /users/:id
 
 ## How to run
 
@@ -26,11 +34,3 @@ docker compose up -d mongodb
 ```bash
 docker compose up -d rocketapi
 ```
-
-## Endpoints🚧
-
-- GET /users
-- GET /users/:id
-- POST /users
-- PUT /users/:id
-- DELETE /users/:id
