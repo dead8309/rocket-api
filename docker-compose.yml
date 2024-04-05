@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  rocketapi:
+    container_name: rocketapi
+    image: dead8309/rocketapi:1.0.0
+    environment:
+      - MONGOURI=${MONGOURI}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+
+volumes:
+  mongodb-data: {}
